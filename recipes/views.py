@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from recipes.models import Recipe
 
@@ -12,5 +12,11 @@ def index(request):
 
     return render(request, 'recipes/index.html', context)
 
-def recipe(request):
-    return render(request, 'recipes/recipe.html')
+def recipe(request, pk):
+    recipe = get_object_or_404(Recipe, pk=pk)
+
+    context = {
+        'recipe': recipe
+    }
+
+    return render(request, 'recipes/recipe.html', context)

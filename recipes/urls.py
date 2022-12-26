@@ -5,5 +5,5 @@ app_name = 'recipes'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('recipe/', views.recipe, name='recipe'),
+    path('recipe/<int:pk>', views.recipe, name='recipe'),
 ]
