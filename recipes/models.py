@@ -5,6 +5,10 @@ from datetime import datetime
 class Recipe(models.Model):
     def __str__(self) -> str:
         return self.name
+    
+    class Meta:
+        verbose_name = 'Receita'
+        verbose_name_plural = 'Receitas'
 
     name = models.CharField(
         max_length=50
@@ -28,7 +32,7 @@ class Recipe(models.Model):
     portions.verbose_name = 'Porções'
 
     category = models.CharField(max_length=50)
-    category.verbose_name = 'Porções'
+    category.verbose_name = 'Categoria'
 
     created_at = models.DateTimeField(default=datetime.now, blank=True, editable=False)
     created_at.verbose_name = 'Criado em'
