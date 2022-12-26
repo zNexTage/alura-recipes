@@ -1,9 +1,16 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from recipes.models import Recipe
 
 # Create your views here.
-def index(request):    
-    return render(request, 'recipes/index.html')
+def index(request):   
+    recipes = Recipe.objects.all()
+
+    context = {
+        'recipes': recipes
+    } 
+
+    return render(request, 'recipes/index.html', context)
 
 def recipe(request):
     return render(request, 'recipes/recipe.html')
