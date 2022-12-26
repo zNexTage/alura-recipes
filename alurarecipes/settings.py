@@ -81,7 +81,6 @@ WSGI_APPLICATION = 'alurarecipes.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
-print(env('ALURA_RECIPE_DB_NAME'))
 
 DATABASES = {
     'default': {
